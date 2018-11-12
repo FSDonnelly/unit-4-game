@@ -19,15 +19,15 @@ var resetAndStartGame = function () {
         '../images/crystal3.jpeg',
         '../images/crystal4.jpeg',
     ];
-    // Generates random "goal" number between 1 - 99
-    randomResult = Math.floor(Math.random() * 69) + 30;
+    // Generates random "goal" number between 19 - 120
+    randomResult = Math.floor(Math.random() * 101) + 19;
     // console.log(randomResult);
     // Show random "goal" number
     $("#result").html('Random Number: ' + randomResult);
 
     for (var i = 0; i < 4; i++) {
-        // Every crystal needs to have a random number between 1 - 15
-        var random = Math.floor(Math.random() * 14) + 1;
+        // Every crystal needs to have a random number between 1 - 12
+        var random = Math.floor(Math.random() * 11) + 1;
 
         console.log(random);
         var crystal = $("<div>");
