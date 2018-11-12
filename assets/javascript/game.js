@@ -2,46 +2,86 @@
 
 // Game has 4 Crystals and Random Result
 var randomResult;
-var wins;
-var losses;
+var wins = 0;
+var losses = 0;
+var previous = 0;
 
 
-// Setters
-// Getters
 
+// Reset and start game
+var resetAndStartGame = function () {
+    //resets crystal values
+    $(".crystals").empty();
 
-randomResult = Math.floor(Math.random() * 99) + 30;
-// console.log(randomResult);
+    var images = [
+        '../images/crystal1.jpeg',
+        '../images/crystal2.jpeg',
+        '../images/crystal3.jpeg',
+        '../images/crystal4.jpeg',
+    ];
+    // Generates random "goal" number between 1 - 99
+    randomResult = Math.floor(Math.random() * 69) + 30;
+    // console.log(randomResult);
+    // Show random "goal" number
+    $("#result").html('Random Number: ' + randomResult);
 
-$("#result").html('Random Number: ' + randomResult);
+    for (var i = 0; i < 4; i++) {
+        // Every crystal needs to have a random number between 1 - 15
+        var random = Math.floor(Math.random() * 14) + 1;
 
-for(var i = 0; i < 4; i++){
-// Every needs to have a random number between 1 - 12
-    var random = Math.floor(Math.random() * 11) + 1;
-    // A new random should be generated everytime we win or loose to the crystals
-    // console.log(random);
-    var crystal = $("<div>");
+        console.log(random);
+        var crystal = $("<div>");
         crystal.attr({
             "class": 'crystal',
             "randomNumber": random
         });
+        crystal.css({
+            "background-image":"url('" + images[i] + "')"
+        });
+        $(".crystals").append(crystal);
 
-    $(".crystals").append(crystal);
-        
-       
+
+    }
+
+    $("#yourTotal").html(previous);
 }
 
+resetAndStartGame();
 
-$(".crystal").on('click', function () {
+// When CLICKING any crystal, it should add to the previous result
 
-    console.log($(this).attr('randomNumber'));
+$(document).on('click', ".crystal", function () {
+
+    var num = parseInt($(this).attr('randomNumber'));
+
+    previous += num;
+    // show your total (increasing everytime you click on crystal)
+    $("#yourTotal").html(previous);
+
+    console.log(previous); //checking my work
+
+    if (previous > randomResult) {
+        losses++;
+        $("#losses").html(losses);
+        alert('You Lost!!')
+        previous = 0;
+        resetAndStartGame();
+    }
+    else if (previous === randomResult) {
+        wins++;
+        $("#wins").html(wins);
+        alert('You Win!!');
+        previous = 0;
+        resetAndStartGame();
+    }
+
 });
 
 
 
 
 
-// When CLICKING any crystal, it should add to the previous result
+
 // Until it equals the randomResult
 // If it is greater than randomResult, then increase lostCounter,then start over
 // If it is equal, then increas the winCounter 
