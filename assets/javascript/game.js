@@ -13,11 +13,11 @@ var resetAndStartGame = function () {
     //resets crystal values
     $(".crystals").empty();
 
-    var images = [
-        '../images/crystal1.jpeg',
-        '../images/crystal2.jpeg',
-        '../images/crystal3.jpeg',
-        '../images/crystal4.jpeg',
+    var images = [ //can't get these images to link to buttons!!!
+        'assets/images/crystal1.jpg',/// tried something different
+        'assets/images/crystal2.jpg',
+        'assets/images/crystal3.jpg',
+        'assets/images/crystal4.jpg',
     ];
     // Generates random "goal" number between 19 - 120
     randomResult = Math.floor(Math.random() * 101) + 19;
@@ -59,14 +59,15 @@ $(document).on('click', ".crystal", function () {
     $("#yourTotal").html(previous);
 
     console.log(previous); //checking my work
-
+// Until it equals the randomResult
     if (previous > randomResult) {
         losses++;
         $("#losses").html(losses);
         alert('You Lost!!')
         previous = 0;
         resetAndStartGame();
-    }
+    }// If it is greater than randomResult, then increase lostCounter,then start over
+// If it is equal, then increas the winCounter 
     else if (previous === randomResult) {
         wins++;
         $("#wins").html(wins);
@@ -82,6 +83,5 @@ $(document).on('click', ".crystal", function () {
 
 
 
-// Until it equals the randomResult
-// If it is greater than randomResult, then increase lostCounter,then start over
-// If it is equal, then increas the winCounter 
+
+

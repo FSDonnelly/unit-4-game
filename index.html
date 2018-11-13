@@ -19,31 +19,29 @@
 
 
   <h1>Crystals Collector Game!</h1>
-  <br>
-  <ol>
-    <li>You will be given a random number at the start of the game.</li>
-    <li>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</li>
-    <li>You win the game by matching your total score to the random number. You lose the game if your total score goes above the random number.</li>
-    <li>The value of each crystal is hidden from you until you click on it.</li>
-    <li>The value of each crystal will change each time the round is finished.</li>
-  </ol>
-<br><br>
-  <p id="result"></p>
-  <br><br><br>
-  <div class="crystals">
-    <div id = "crystal1"></div>
-    <div id = "crystal2"></div>
-    <div id = "crystal3"></div>
-    <div id = "crystal4"></div>
+  <div class="container" id="rules">
+    <br>
+    <ol>
+      <li>You will be given a random number at the start of the game.</li>
+      <li>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
+        total
+        score.</li>
+      <li>You win the game by matching your total score to the random number. You lose the game if your total score
+        goes
+        above the random number.</li>
+      <li>The value of each crystal is hidden from you until you click on it.</li>
+      <li>The value of each crystal will change each time the round is finished.</li>
+    </ol>
+    <br><br>
   </div>
-
-  <br><br>
-
-
-
   <div class="container">
+    <p id="result"></p>
+  </div>
+  <br><br><br>
+
+  <div class="container" id = "scores">
     <div class="row">
-      
+
       <br><br><br>
       <h2 class="col-md-4">Wins:</h2>
       <p id="wins"></p>
@@ -53,6 +51,20 @@
       <p id="yourTotal"></p>
     </div>
   </div>
+<br><br>
+
+  <div class="crystals">
+    <div id="crystal1"></div>
+    <div id="crystal2"></div>
+    <div id="crystal3"></div>
+    <div id="crystal4"></div>
+  </div>
+
+  <br><br>
+
+
+
+
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

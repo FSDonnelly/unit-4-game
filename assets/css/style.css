@@ -3,9 +3,9 @@
 }
 
 body {
-    background-image: url('../images/background.jpeg');
+    background-image: url('../images/background.jpg');
     overflow: auto;
-    background-color: pink;
+    background-color: rgb(192, 246, 255);
     
 
 }
@@ -32,6 +32,7 @@ h1 {
     background: url(../images/crystal1.jpg);
     background-size: cover;
     background-repeat: no-repeat;  
+    border-radius: 80px;
 }
 
 img{
@@ -50,8 +51,16 @@ img{
     font-size: 45px;
     font-family: 'Press Start 2P', cursive;
     background-color: limegreen;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 #crystal1{
   background-color: blue;
+}
+
+#scores {
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
 }
