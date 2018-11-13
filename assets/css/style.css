@@ -3,13 +3,20 @@
 }
 
 body {
-    background-image: url("../images/background.jpeg");
+    background-image: url('../images/background.jpeg');
     overflow: auto;
+    background-color: pink;
+    
+
 }
 
 h1 {
     text-align: center;
     font-size: 80px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: purple;
+    color: white;
+   
 }
 .crystals {
     display: flex;
@@ -22,7 +29,9 @@ h1 {
     border: 1px solid green;
     height: 200px;
     width: 200px;
-    background-image:url( + images[i] + )
+    background: url(../images/crystal1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;  
 }
 
 img{
@@ -39,4 +48,10 @@ img{
     border: 1px solid black;
     text-align: center;
     font-size: 45px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: limegreen;
+}
+
+#crystal1{
+  background-color: blue;
 }
